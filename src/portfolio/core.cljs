@@ -12,16 +12,15 @@
   (reagent/atom
    {:text "" :color "rgba(50, 50, 255, 0.2)"}))
 
-(defn home-page []
-  [:div [:h2 "Welcome tto Reagent"]])
-
 ;; Page
+
+
+
+
 (defn paragraph [ratom]
-  (println (:color @ratom))
   (when (> (count (:text @ratom)) 0)
    [:div {:style {:background-color (:color @ratom) :width 160}}
-    [:p "Hi,  "(:text @ratom)]]))
-
+    [:p "Hi, "(:text @ratom)]]))
 
 (defn page [ratom]
   (let [guestname (fn [e]
@@ -31,11 +30,17 @@
     [paragraph ratom]]))
 
 
+(defn portfolio-app [props]
+  [:div
+   [:section#portfolio-app
+     [:h1 "Hello"]
+     (page app-state)]])
+
 ;; -------------------------
 ;; Initialize app
 
 (defn mount-root []
-  (reagent/render [page app-state] (.getElementById js/document "app")))
+  (reagent/render [portfolio-app] (.getElementById js/document "app")))
 
 (defn init! []
   (mount-root))

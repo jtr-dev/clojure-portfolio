@@ -9,7 +9,8 @@
                  [reagent "0.6.0"]]
 
   :plugins [[lein-cljsbuild "1.1.3"]
-            [lein-figwheel "0.5.4-5"]]
+            [lein-figwheel "0.5.4-5"]
+            [reagent-forms "0.5.28"]]
 
   :min-lein-version "2.5.0"
 
