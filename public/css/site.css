@@ -1,8 +1,7 @@
 body {
   font-family: 'Helvetica Neue', Verdana, Helvetica, Arial, sans-serif;
-  max-width: 600px;
+  max-width: 100%;
   margin: 0 auto;
-  padding-top: 72px;
   -webkit-font-smoothing: antialiased;
   font-size: 1.125em;
   color: #333;
@@ -31,4 +30,21 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+.mainnav li {
+    color: white;
+    display:inline-block;
+    float: right;
+    line-height: 60px;
+    vertical-align: baseline;
+    margin-right: 60px;
+}
+
+.darkbg{
+    background-color: #FF7F00;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    padding: 10px;
 }
