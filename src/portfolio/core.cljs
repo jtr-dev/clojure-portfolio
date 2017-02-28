@@ -15,7 +15,8 @@
 ;; Page
 
 
-
+(defn navbar []
+   [:h2 "HELLO"])
 
 (defn paragraph [ratom]
   (when (> (count (:text @ratom)) 0)
@@ -29,12 +30,19 @@
     [:p [:input {:type "text" :on-change guestname}]]
     [paragraph ratom]]))
 
+(defn project-card []
+  [:div.site-title "Site Title"])
+
 
 (defn portfolio-app [props]
-  [:div
-   [:section#portfolio-app
-     [:h1 "Hello"]
-     (page app-state)]])
+  [:div#header (navbar)
+   [:section.your-name
+     [:h4 "Type here: "]
+     (page app-state)]
+   [:section.portfolio-app
+     [:h4 "My Blog"]
+     [:div.card.card-1 (project-card)]]
+   [:div "Footer"]])
 
 ;; -------------------------
 ;; Initialize app
