@@ -17,7 +17,7 @@
   [:div.container-fluid.darkbg
    [:div
    [:ul
-    [:mainnav
+    [:div.mainnav
      [:li "Hello"]]]]])
 
 
