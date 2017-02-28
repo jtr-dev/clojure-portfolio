@@ -16,7 +16,10 @@
 
 
 (defn navbar []
-   [:h2 "HELLO"])
+   [:nav "HELLO"])
+
+(defn footer []
+   [:div.footer "2017"])
 
 (defn paragraph [ratom]
   (when (> (count (:text @ratom)) 0)
@@ -31,18 +34,14 @@
     [paragraph ratom]]))
 
 (defn project-card []
-  [:div.site-title "Site Title"])
+  [:div.site-title "My Blog"])
 
 
 (defn portfolio-app [props]
   [:div#header (navbar)
-   [:section.your-name
-     [:h4 "Type here: "]
-     (page app-state)]
    [:section.portfolio-app
-     [:h4 "My Blog"]
      [:div.card.card-1 (project-card)]]
-   [:div "Footer"]])
+   [:footer (footer)]])
 
 ;; -------------------------
 ;; Initialize app
