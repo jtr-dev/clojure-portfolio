@@ -1,0 +1,138 @@
+/** {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Futura, Helvetica, sans-serif;
+  line-height: 1.5;
+  background-color: rgba(0, 43, 54, 0.75);
+  color: white;
+}
+
+h3 {
+  margin: 0;
+  font-weight: normal;
+}
+
+p {
+  margin-top: 0;
+}*/
+
+.a {
+  position: relative;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  letter-spacing: 1px;
+}
+@media all and (min-width: 37.5rem) {
+  .a {
+    width: 50%;
+    float: left;
+  }
+  .a:nth-child(even) {
+    float: right;
+  }
+}
+.a:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background-color: rgba(0, 43, 54, 0.75);
+  transition: background-color .3s ease-out;
+}
+.a:hover:before {
+  background-color: rgba(0, 43, 54, 0.5);
+}
+.a:nth-child(1) .b {
+  background-image: url(http://placekitten.com/600/800);
+}
+.a:nth-child(2) .b {
+  background-image: url(http://fillmurray.com/600/800);
+}
+.a:nth-child(3) .b {
+  background-image: url(http://placekitten.com/g/600/800);
+}
+.a:nth-child(4) .b {
+  background-image: url(http://nicenicejpg.com/600/800);
+}
+.a:nth-child(5) .b {
+  background-image: url(http://placecage.com/600/400);
+}
+.a:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+  margin-right: -0.25rem;
+}
+
+.b {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -2;
+  background: transparent url(http://fillmurray.com/g/600/800) no-repeat center center;
+  background-size: cover;
+}
+
+.c {
+  display: inline-block;
+  vertical-align: middle;
+  width: 80%;
+  margin: 4rem auto;
+  padding: 2rem .25rem;
+  color: rgba(255, 255, 255, 0.67);
+  border: 2px solid;
+  text-align: center;
+  transition: background-color .3s ease-out;
+}
+.c:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+  margin-right: -0.25rem;
+}
+.c .c--inner {
+  display: inline-block;
+  width: 99%;
+  vertical-align: middle;
+}
+.c h3 {
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-style: italic;
+  font-family: Georgia, serif;
+}
+
+.cta {
+  display: inline-block;
+  min-width: 50%;
+  padding: .5rem 1rem;
+  border: 1px solid;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all .25s ease-out;
+  color: rgba(211, 54, 130, 0.67);
+  text-shadow: 0 0 0;
+}
+@media all and (min-width: 37.5rem) {
+  .cta {
+    min-width: 25%;
+  }
+}
+.cta:hover, .cta:focus, .cta:active {
+  color: rgba(255, 255, 255, 0.67);
+  border-color: rgba(211, 54, 130, 0.67);
+  background-color: rgba(211, 54, 130, 0.67);
+}
