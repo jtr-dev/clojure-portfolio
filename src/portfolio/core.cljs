@@ -4,24 +4,18 @@
 ;; -------------------------
 ;; Views
 
-; (defonce site-name
-;   (reagent/atom
-;    {:text ""}))
-
 (defonce app-state
   (reagent/atom
    {:text "" :color "rgba(50, 50, 255, 0.2)"}))
 
 
+
 (defn navbar []
-  [:div.container-fluid.darkbg
-   [:div
+ [:div.container-fluid.darkbg
+  [:div
    [:ul
     [:div.mainnav
-     [:li "Hello"]]]]])
-
-
-;; Page
+     [:li [:a {:href "/"} "Home"]]]]]])
 
 (defn paragraph [ratom]
   (when (> (count (:text @ratom)) 0)
@@ -35,11 +29,23 @@
     [:p [:input {:type "text" :on-change guestname}]]
     [paragraph ratom]]))
 
+
+(defn project-card []
+  [:div.card.card-1
+   [:div.card-title "My Blog"
+    [:hr]
+    [:div [:img.card-image {:src "https://dummyimage.com/250x250/000/fff.png"}]]]])
+
+(defn footer []
+  [:div.footer "2017"])
+
+;; View
+
 (defn portfolio-app [props]
-  [:div (navbar)
-   [:section#portfolio-app
-     [:h1 "Hello"]
-     (page app-state)]])
+  [:div.navbar (navbar)
+   [:section.portfolio-app
+     [:div (project-card)]]
+   [:footer (footer)]])
 
 ;; -------------------------
 ;; Initialize app
