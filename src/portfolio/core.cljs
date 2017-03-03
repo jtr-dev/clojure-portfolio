@@ -33,6 +33,9 @@
 (defroute "/portfolio" []
       (swap! app-state assoc :page :portfolio))
 
+(defroute "/contact" []
+      (swap! app-state assoc :page :contact))
+
 (hook-browser-navigation!)
 
 (defmulti current-page #(@app-state :page))
@@ -53,15 +56,39 @@
      [:p.subtitle "Catchy subtitle"]
      [:a.cta {:href "#"} "GO"]]]]))
 
-(defn now [] (new java.util.Date))
+(defn current-year [] (.format (java.text.SimpleDateFormat. "yyyy") (new java.util.Date)))
+; (str (current-year) " asdasd")
 
 (defn footer []
- [:div.footer ])
+ [:div {:style {:background-color "#20202D"}}
+      "2017"  "/" [:a {:href "https://github.com"} "Tyler Roberts"]
+      "/"
+      [:a  {:href "https://github.com"} "Reid Quisenberry"]])
 
+
+(defn port-data []
+ [{:title "My Blog" :url "https"}
+  {:title "My Site" :url "https"}])
+
+(map #([:title]) port-data)
 
 (defmethod current-page :contact [])
+  ; (map #([:li :title] port-data)))
+  ; [:table
+  ;  (for [i (range 10)]
+  ;    [:tr (for [j (range 3)]
+  ;           [:td (str "Row " (+ 1 i) ", Col " (+ 1 j))])])]))
 
-
+; (defn lister [items]
+;   [:ul
+;    (for [item items]
+;      ^{:key item} [:li "Item " item])])
+;
+; (defn lister-user []
+;   [:div
+;    "Here is a list:"
+;    [lister (range 3)]])
+;
 
 (defn navbar []
  [:div#menu
@@ -77,18 +104,18 @@
      [:a {:href "#/portfolio"}
       [:span "Portfolio"]]]
     [:li
-     [:a {:href "#"}
+     [:a {:href "#/contact"}
       [:span "Contact"]]]]]])
 
 
 ;; View
-
 (defn portfolio-app [props]
-  [:div (navbar)
-   [:hr]
-   (current-page)
-   [:hr]
-   [:footer.footer (footer)]])
+ [:div.container
+  [:div (navbar)]
+  [:hr]
+  (current-page)
+  [:hr]
+  [:footer.footer (footer)]])
 
 ;; -------------------------
 ;; Initialize app
