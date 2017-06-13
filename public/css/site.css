@@ -1,34 +1,109 @@
+body,
+div,
+ul,
+li,
+blockquote {
+   margin: 0;
+   padding: 0;
+   border: 0;
+}
+
 body {
-  font-family: 'Helvetica Neue', Verdana, Helvetica, Arial, sans-serif;
-  max-width: 600px;
-  margin: 0 auto;
-  padding-top: 72px;
-  -webkit-font-smoothing: antialiased;
-  font-size: 1.125em;
-  color: #333;
-  line-height: 1.5em;
-}
-
-h1, h2, h3 {
-  color: #000;
-}
-h1 {
-  font-size: 2.5em
-}
-
-h2 {
-  font-size: 2em
-}
-
-h3 {
-  font-size: 1.5em
+   background: #313145;
+   margin-left: 200px;
+   margin-top: 100px;
+   margin-bottom: 100px;
+   color: white;
 }
 
 a {
-  text-decoration: none;
-  color: #09f;
+   transition: all 0.3s ease 0s;
 }
 
-a:hover {
-  text-decoration: underline;
+#menu {
+   width: 10px;
+   height: 10px;
+   margin: auto;
+   top: 0;
+   bottom: 10;
+   left: 0;
+   right: 10;
+   position: absolute;
+
+}
+
+nav ul {
+   list-style: none;
+   position: relative;
+}
+
+nav ul li {
+   float: left;
+   margin: 0 20px 0 0;
+}
+
+nav ul li a {
+   display: block;
+   width: 120px;
+   height: 120px;
+   background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/icons.png");
+   background-repeat: no-repeat;
+   border-radius: 4px;
+}
+
+nav ul li:nth-child(1) a {
+   background-color: #5BB2FC;
+   background-position: 28px 28px;
+}
+
+nav ul li:nth-child(2) a {
+   background-color: #58EBD3;
+   background-position: 28px -96px;
+}
+
+nav ul li:nth-child(3) a {
+   background-color: #FFA659;
+   background-position: 28px -222px;
+}
+
+nav ul li:nth-child(4) a {
+   background-color: #FF7A85;
+   background-position: 28px -342px;
+}
+
+nav ul li:nth-child(1) a:hover, nav ul li:nth-child(2) a:hover, nav ul li:nth-child(3) a:hover, nav ul li:nth-child(4) a:hover {
+   opacity: 0.8;
+}
+
+nav ul li a span {
+   font: 50px "Dosis", sans-serif;
+   text-transform: uppercase;
+   position: absolute;
+   left: 200px;
+   top: 20px;
+   visibility: hidden;
+}
+
+nav ul li a:hover span {
+   visibility: visible;
+}
+
+nav ul li:nth-child(1) a span {
+   color: #5BB2FC;
+}
+
+nav ul li:nth-child(2) a span {
+   color: #58EBD3;
+}
+
+nav ul li:nth-child(3) a span {
+   color: #FFA659;
+}
+
+nav ul li:nth-child(4) a span {
+   color: #FF7A85;
+}
+
+.footer {
+  margin-top: 100px;
 }

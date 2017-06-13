@@ -6,10 +6,13 @@
 
   :dependencies [[org.clojure/clojure "1.8.0" :scope "provided"]
                  [org.clojure/clojurescript "1.9.229" :scope "provided"]
-                 [reagent "0.6.0"]]
+                 [reagent "0.6.0"]
+                 [reagent-forms "0.5.28"]
+                 [secretary "1.2.3"]]
 
   :plugins [[lein-cljsbuild "1.1.3"]
             [lein-figwheel "0.5.4-5"]]
+
 
   :min-lein-version "2.5.0"
 
